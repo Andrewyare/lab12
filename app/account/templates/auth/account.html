@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row d-flex justify-content-center">
+	<div class="text-center">
+		<img src="{{ image_file }}" width="200" class="rounded-circle">
+	</div>
+
+	<div class="text-center mt-3">
+		<h3 class="mt-2 mb-0">{{ current_user.username }}</h5>
+			<span>{{ current_user.email }}</span>
+			<div class="px-4 mt-1">
+				<p class="fonts">{{ current_user.about_me }}</p>
+			</div>
+			<div class="px-4 mt-1">
+				<p class="fonts">Last seen: {{ current_user.last_seen }}</p>
+			</div>
+			<div class="buttons">
+				<a href="{{ url_for('account.reset_password') }}" class="btn btn-outline-primary px-4">
+					Reset password
+				</a>
+			</div>
+			<br>
+			<div class="buttons">
+				<a href="{{ url_for('account.update_account') }}" class="btn btn-outline-primary px-4">
+					Update Profile
+				</a>
+			</div>
+			<hr>
+		</h3>
+	</div>
+
+</div>
+</div>
+
+</div>
+
+{% endblock %}
